@@ -4,24 +4,20 @@
 # "Insights into the early epidemic spread of Ebola in Sierra Leone provided by viral sequence data"
 # T. Stadler, D. Kuhnert, D.A. Rasmussen, L. du Plessis. PLoS Currents: Outbreaks, 2014
 
-path<- "/Users/tstadler/Documents/Data/Uni/Teaching/CeskyKrumlov/"
+path<- "/Users/tstadler/Documents/Data/Uni/Teaching/CeskyKrumlov/R"
 
 library(ape)
 library(TreePar)
 
-setwd(paste(path,"R",sep=""))
-source("ebolaFunctions.R")
+setwd(paste(path,sep=""))
+source("02-Ebola-Functions.R")
 
 ############################################
 ############################################
 # read data trees
 
-setwd(paste(path,"Data",sep=""))
-trees<-read.nexus("GireEtAl-SL.HKY_strict.exp.trees")
-# 10% Burn in:
-trees<-trees[1001:10001]
-# use only 90 trees
-trees<-trees[100*(1:90)]   
+setwd(paste(path,sep=""))
+trees<-read.tree("02-EbolaTrees.trees")
 
 ############################################
 ############################################
